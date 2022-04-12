@@ -1,0 +1,45 @@
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        price:
+          type: number
+        description:
+          type: string
+        type:
+          type: string
+      example:
+        name: Kẹo kéo
+        price: 4000
+        description: Kẹo kéo nhà làm, thơm ngon bổ dưỡng
+        type: Kẹo
+    
+    Error:
+      type: object
+      properties:
+        success: 
+          type: boolean
+        message: 
+          type: string
+      example:
+        success: false
+        message: internal server error
+  
+  responses:
+    Product: 
+      type: object 
+      properties:
+        _id: 
+          type: string
+        $ref: '#components/schemas/Product'
+      example:
+        _id: 625326f34b9b3cfc7a873d13
+        name: Kẹo kéo
+        price: 4000
+        description: Kẹo kéo nhà làm, thơm ngon bổ dưỡng
+        type: Kẹo
